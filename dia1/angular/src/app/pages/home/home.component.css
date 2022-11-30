@@ -1,0 +1,11 @@
+.cuerpo
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
+    height: 87.1vh;
+    color: white;
+}
