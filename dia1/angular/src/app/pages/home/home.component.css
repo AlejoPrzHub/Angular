@@ -1,11 +1,39 @@
 .cuerpo
 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    background-color: black;
-    height: 87.1vh;
+    color: black;
+    height: 80vh;
+    background-image: url("../../../assets/img/clint-mckoy-App9lCSl2uA-unsplash.jpg");
+    background-position: 50% 70%;
+    background-size: cover;
+}
+
+.cuerpo h1
+{
+   
     color: white;
+    font-size: 60px;
+}
+.cuerpo h2
+{
+    
+    color: white;
+}
+
+.imagen
+{
+    
+    
+    
+}
+
+.cover
+{
+    
+    background-size: cover;
+
 }

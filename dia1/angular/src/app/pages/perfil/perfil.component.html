@@ -1,0 +1,31 @@
+<div class="perfil">
+
+    <div class="pre">
+        <div class="for">
+            <div class="dere">
+                
+                <div class="superior">
+                    <img src="{{miUsuario.url}}" alt="">
+                    <h1>{{miUsuario.nombre}} {{miUsuario.apellidos}}</h1>
+                </div>
+                <div class="inferior">
+                    <div class="nuevo"><p>Nombre</p><input   class="componente otro" type="text" value="{{miUsuario.nombre}}"></div>
+                    <div class="nuevo"><p>Apellido</p><input   class="componente otro" type="text" value="{{miUsuario.apellidos}}"></div>
+                    <div class="nuevo"><p>Correo</p><input  class="componente otro" type="text" value="{{miUsuario.correo}}" ></div>
+            
+                </div>
+
+            </div>
+            <div class="izq">
+                <h1>Editar Datos</h1>
+                <input class="componente" #input1 type="text"  placeholder="Nombre">
+                <input class="componente" #input2 type="text"  placeholder="Apellido">
+                <input class="componente" #input3 type="text"  placeholder="Correo">
+                <input class="componente" #input4 type="text"  placeholder="Url">
+                <input class="boton" type="button" (click)=enviar1(input1) (click)=enviar2(input2) (click)=enviar3(input3) (click)=enviar4(input4) value="Modificar">
+            </div>
+        </div>
+    </div>
+
+
+</div>

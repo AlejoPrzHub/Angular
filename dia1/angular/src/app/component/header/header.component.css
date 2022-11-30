@@ -8,7 +8,7 @@
     background-color: rgb(50, 185, 185);
     color: white;
     width: 100%;
-    height: 70px;
+    height: 10vh;
 }
 .cabecera ul
 {
@@ -19,7 +19,13 @@
 }
 .cabecera ul li a
 {
+    font-size: 20px;
     text-decoration: none;
     color: white;
-    
+    padding: 5px;
+}
+.cabecera ul li a:hover
+{
+   border: 2px white solid; 
+   border-radius: 5px;
 }
