@@ -8,7 +8,9 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FormularioRegistroComponent } from './component/formulario-registro/formulario-registro.component';
 import { RegistroComponent } from './pages/registro/registro.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LibrosComponent } from './pages/libros/libros.component';
+import { RefPipe } from './pipes/ref-.pipe';
 
 
 @NgModule({
@@ -18,12 +20,15 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     FormularioRegistroComponent,
-    RegistroComponent
+    RegistroComponent,
+    LibrosComponent,
+    RefPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

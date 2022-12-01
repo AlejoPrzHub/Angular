@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="alerta" *ngIf ="Libros.length ===0">
+        <img src="../../../assets/img/gato404.jpg" alt="">
+    </div>
+
+    <div class="conte" *ngFor ="let librito of Libros; let par = odd;" [ngClass]="{botoncito:par}" >
+        <div class="card">
+            <img src="{{librito.photo}}" alt="">
+        </div>
+    <div class="informacion">
+        <h2>{{librito.titulo}}</h2>
+        <p>{{librito.autor}}</p>
+        <p>{{librito.tipoLibro}}</p>
+        <p>{{librito.id_libro | ref}}</p>
+    </div>
+    <div class="precio">
+        <div class="box-precio">
+            <span class="precio1">€/{{librito.precio}}</span>
+            <input  type="button" value="Comprar">
+        </div>
+    </div>
+    </div>
+
+</div>
+
+
+<div class="container2">
+
+    <form action="Formulario">
+        <div class="preformulario">
+            <form class="formulario" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                
+                    <h1>Añade tu libro</h1>
+                    <input class="componente" formControlName="titulo" type="text" placeholder="Titulo">
+                    <input class="componente" formControlName="tipoLibro" type="text" placeholder="Autor">
+                    <input class="componente" formControlName="autor" type="text" placeholder="Tipo de Libro">
+                    <input class="componente" formControlName="precio" type="number" placeholder="Precio">
+                    <input class="componente" formControlName="photo" type="text" placeholder="Photo">
+                    <input class="componente" formControlName="id_libro" type="number" placeholder="Codigo Libro">
+                    <input class="boton" type="submit" value="Añadir Libro">
+                
+            </form>
+        </div>
+    </form>
+
+</div>
