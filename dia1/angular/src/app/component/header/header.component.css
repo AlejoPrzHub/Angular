@@ -14,8 +14,14 @@
 {
     display: flex;
     list-style: none;
-    padding: 1rem;
+
     gap: 1rem;
+    
+}
+.cabecera ul li
+{
+    width: 130px;
+    text-align: center;
 }
 .cabecera ul li a
 {
@@ -23,9 +29,41 @@
     text-decoration: none;
     color: white;
     padding: 5px;
+    
 }
-.cabecera ul li a:hover
+.cabecera ul li:hover
 {
-   border: 2px white solid; 
+   
+   border: 2px white solid;
    border-radius: 5px;
+   
+}
+
+.cabecera ul li .menu-vertical
+{
+    position: absolute;
+    display: none;
+    width: 130px;
+    background-color: rgba(0,0,0,.5);
+    margin-top: 10px;
+
+}
+.cabecera ul li .menu-vertical a
+{
+    display: block;
+    color: white;
+    padding: 10px;
+}
+.cabecera ul li:hover .menu-vertical
+{
+    display: block;
+}
+.menu-vertical li:hover
+{
+    background-color: rgb(50, 185, 185);
+}
+
+.tope
+{
+    padding: 10px 0 10px;
 }

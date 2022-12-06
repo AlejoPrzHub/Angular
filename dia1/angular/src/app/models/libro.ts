@@ -7,10 +7,10 @@ export class Libro {
     precio:number;
     photo:string;
 
-    constructor(id_libro,id_usuario,titulo,tipoLibro,autor,precio,photo)
+    constructor(titulo,tipoLibro,autor,precio,photo,id_usuario = 0,id_libro = 0,)
     {
-        this.id_libro = 0;
-        this.id_usuario = 0;
+        this.id_libro = id_libro;
+        this.id_usuario = id_usuario;
         this.titulo = titulo;
         this.tipoLibro = tipoLibro;
         this.autor = autor;

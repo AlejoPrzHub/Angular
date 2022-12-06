@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Libro } from 'src/app/models/libro';
+import { LibrosService } from 'src/app/shared/libros.service';
 
 @Component({
   selector: 'app-libros',
@@ -8,33 +9,35 @@ import { Libro } from 'src/app/models/libro';
   styleUrls: ['./libros.component.css']
 })
 export class LibrosComponent {
-  profileForm = new FormGroup
-  ({
-    titulo:new FormControl(""),
-    tipoLibro:new FormControl(""),
-    autor:new FormControl(""),
-    precio:new FormControl(""),
-    photo:new FormControl(""),
-    id_libro:new FormControl("")})
-
+  
   public Libros: Libro[];
-  public libro:Libro;
 
-  constructor()
+  constructor(public librosService:LibrosService)
   {
     this.Libros = 
     [
-      // new Libro(0,0,"Velero rojo","tapa dura","Juan Jimenez",50,"https://pictures.abebooks.com/inventory/5216856968.jpg"),
-
-      // new Libro(0,0,"Velero Azul","Digital","Juan Perez",40,"https://pictures.abebooks.com/inventory/5216856968.jpg")
+      // new Libro ("hola","yo","tu",12,"aqui",49,500),
+      // new Libro ("hola","yo","tu",12,"aqui",49,200)
     ]
   }
 
-  onSubmit()
+  getAll(condicion:number)
   {
-    let libro = new Libro(this.profileForm.controls["id_libro"].value,0,this.profileForm.controls["titulo"].value,this.profileForm.controls["tipoLibro"].value,this.profileForm.controls["autor"].value,this.profileForm.controls["precio"].value,this.profileForm.controls["photo"].value)
-    console.log(libro)
-    this.Libros.push(libro)
+    if(condicion)
+    {this.Libros=[this.librosService.getOne(condicion)]}
+    else
+    {this.Libros = this.librosService.getAll()}
   }
 
+  getOne(condicion:number)
+  {
+    this.librosService.getOne(condicion)
+    console.log(this.librosService)
+  }
+
+  delete(condicion:number)
+  {
+    this.librosService.delete(condicion);
+    this.Libros = this.librosService.getAll()
+  }
 }

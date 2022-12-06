@@ -1,0 +1,28 @@
+<div class="container2">
+
+    <form action="Formulario">
+        <div class="preformulario">
+            <form class="formulario" > <!-- [formGroup]="profileForm" (ngSubmit)="onSubmit()" -->
+            
+                
+                    <h1>Añade tu libro</h1>
+                    <input class="componente" #input1  type="text" placeholder="Titulo"> 
+                    <input class="componente" #input2  type="text" placeholder="Autor"> 
+                    <input class="componente" #input3  type="text" placeholder="Tipo de Libro"> 
+                    <input class="componente" #input4  type="number" placeholder="Precio"> 
+                    <input class="componente" #input5  type="text" placeholder="Photo"> 
+                    <input class="componente" #input6  type="number" placeholder="Codigo Libro"> 
+                    <input class="boton" type="button" value="Añadir Libro" (click)="enviar(input1,input2,input3,input4,input5,input6)">
+                
+            </form>
+        </div>
+    </form>
+
+</div>
+<!-- 
+formControlName="titulo"
+formControlName="tipoLibro"
+formControlName="autor"
+formControlName="precio"
+formControlName="photo"
+formControlName="id_libro" -->

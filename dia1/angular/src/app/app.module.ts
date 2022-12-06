@@ -11,6 +11,8 @@ import { RegistroComponent } from './pages/registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LibrosComponent } from './pages/libros/libros.component';
 import { RefPipe } from './pipes/ref-.pipe';
+import { AgregarLibrosComponent } from './pages/agregar-libros/agregar-libros.component';
+import { ModificarLibrosComponent } from './pages/modificar-libros/modificar-libros.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { RefPipe } from './pipes/ref-.pipe';
     FormularioRegistroComponent,
     RegistroComponent,
     LibrosComponent,
-    RefPipe
+    RefPipe,
+    AgregarLibrosComponent,
+    ModificarLibrosComponent
   ],
   imports: [
     BrowserModule,

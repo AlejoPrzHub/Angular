@@ -2,10 +2,17 @@
     <h1>MyBooks</h1>
 
     <ul>
-        <li><a routerLink= "" >Home</a></li>
-        <li><a routerLink= "/libros" >Libros</a></li>
-        <li><a routerLink='/registro'>Registro</a></li>
-        <li><a routerLink='/perfil'>Perfil</a></li>
+        <li class="tope"><a routerLink= ""  >Home</a></li>
+        <li class="tope">
+            <a routerLink= "/libros"  >Libros</a>
+            <ul class="menu-vertical">
+                <li><a routerLink= "/agregarLibro">Agregar</a></li>
+                <li><a routerLink= "/modificarLibro">Modificar</a></li>
+            </ul>    
+        
+        </li>
+        <li class="tope"><a routerLink='/registro' >Registro</a></li>
+        <li class="tope"><a routerLink='/perfil' >Perfil</a></li>
     </ul>
 
 </div>
