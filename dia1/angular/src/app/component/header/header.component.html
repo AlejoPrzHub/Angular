@@ -1,8 +1,8 @@
 <div class="cabecera">
     <h1>MyBooks</h1>
 
-    <ul>
-        <li class="tope"><a routerLink= ""  >Home</a></li>
+    <ul *ngIf="this.servicio.logueado  == true; else esFalso">
+
         <li class="tope">
             <a routerLink= "/libros"  >Libros</a>
             <ul class="menu-vertical">
@@ -11,8 +11,15 @@
             </ul>    
         
         </li>
-        <li class="tope"><a routerLink='/registro' >Registro</a></li>
         <li class="tope"><a routerLink='/perfil' >Perfil</a></li>
     </ul>
+
+    <ul #esFalso>
+        <li class="tope"><a routerLink= ""  >Home</a></li>
+        <li class="tope" ><a routerLink='/login' >Login</a></li>
+        <li class="tope"><a routerLink='/registro' >Registro</a></li>
+        
+    </ul>
+    
 
 </div>

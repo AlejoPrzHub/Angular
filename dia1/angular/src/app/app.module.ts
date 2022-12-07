@@ -13,6 +13,9 @@ import { LibrosComponent } from './pages/libros/libros.component';
 import { RefPipe } from './pipes/ref-.pipe';
 import { AgregarLibrosComponent } from './pages/agregar-libros/agregar-libros.component';
 import { ModificarLibrosComponent } from './pages/modificar-libros/modificar-libros.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './pages/login/login.component';
+import { FormularioLoginComponent } from './component/formulario-login/formulario-login.component';
 
 
 @NgModule({
@@ -26,13 +29,16 @@ import { ModificarLibrosComponent } from './pages/modificar-libros/modificar-lib
     LibrosComponent,
     RefPipe,
     AgregarLibrosComponent,
-    ModificarLibrosComponent
+    ModificarLibrosComponent,
+    LoginComponent,
+    FormularioLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

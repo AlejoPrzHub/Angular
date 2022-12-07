@@ -3,12 +3,13 @@
         <div class="formulario">
             
                 <h1>Registrate</h1>
-                <input class="componente" type="text" placeholder="Nombre">
-                <input class="componente" type="text" placeholder="Apellido">
-                <input class="componente" type="text" placeholder="Correo">
-                <input class="componente" type="text" placeholder="Contraseña">
-                <input class="componente" type="text" placeholder="Repetir Contraseña">
-                <input class="boton" type="button" value="Registrarse">
+                <input class="componente" type="text" #input1 placeholder="Nombre">
+                <input class="componente" type="text" #input2 placeholder="Apellido">
+                <input class="componente" type="text" #input3 placeholder="Correo">
+                <input class="componente" type="text" #input4 placeholder="Foto">
+                <input class="componente" type="text" #input5 placeholder="Contraseña">
+                <input class="componente" type="text" #input6 placeholder="Repetir Contraseña">
+                <input class="boton" type="button" value="Registrarse" (click)="registrarUsuario(input1,input2,input3,input4,input5,input6)">
             
         </div>
     </div>

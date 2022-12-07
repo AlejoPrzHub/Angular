@@ -35,7 +35,7 @@ export class AgregarLibrosComponent {
 
   enviar(nuevotitulo:HTMLInputElement,nuevotipoLibro:HTMLInputElement,nuevoautor:HTMLInputElement,nuevoprecio:HTMLInputElement,nuevophoto:HTMLInputElement,nuevoidLibro:HTMLInputElement)
   {
-    let libro = new Libro(nuevotitulo.value,nuevotipoLibro.value,nuevoautor.value,nuevoprecio.value,nuevophoto.value,0,nuevoidLibro.valueAsNumber)
+    let libro = new Libro(nuevotitulo.value,nuevotipoLibro.value,nuevoautor.value,nuevoprecio.valueAsNumber,nuevophoto.value,0,nuevoidLibro.valueAsNumber)
     this.librosService.add(libro);
     console.log(libro)
   }
