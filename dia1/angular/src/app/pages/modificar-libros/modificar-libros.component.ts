@@ -20,9 +20,8 @@ export class ModificarLibrosComponent {
 
   modificar(nuevotitulo:string,nuevotipoLibro:string,nuevoautor:string,nuevoprecio:number,nuevophoto:string,nuevoidLibro:number)
   {
-    let nuevolibro = this.librosService.getOne(nuevoidLibro)
 
-    nuevolibro = 
+    let nuevolibro = 
     {
       titulo:nuevotitulo?nuevotitulo:null,
       tipoLibro:nuevotipoLibro?nuevotipoLibro:null,
@@ -32,6 +31,17 @@ export class ModificarLibrosComponent {
       id_libro:nuevoidLibro?nuevoidLibro:null,
       id_usuario:null  
     }
-    this.librosService.edit(nuevolibro);
+    this.librosService.edit(nuevolibro,nuevoidLibro)
+    .subscribe((data:String)=>
+    {
+      if(data != "-1")
+      {
+      console.log("Libro Modificado correctamente")
+      nuevolibro.id_libro = Number(data)
+      }
+      else
+      console.log("ERROR al modificar libro")
+    })
   }
+
 }

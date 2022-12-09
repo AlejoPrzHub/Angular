@@ -14,10 +14,9 @@
 {
     display: flex;
     list-style: none;
-
-    gap: 1rem;
-    
+    gap: 1rem;  
 }
+
 .cabecera ul li
 {
     width: 130px;
@@ -67,4 +66,5 @@
 {
     padding: 10px 0 10px;
 }
+
 

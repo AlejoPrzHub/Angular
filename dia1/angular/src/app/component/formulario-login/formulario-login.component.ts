@@ -9,12 +9,21 @@ import {UsuarioService} from "../../shared/usuario.service"
 })
 export class FormularioLoginComponent {
 
-  constructor(public UsuarioService:UsuarioService){}
+  constructor(public UsuarioService:UsuarioService)
+  {
+    
+  }
 
   iniciarSesion(correo:HTMLInputElement,password:HTMLInputElement)
   {
     let usuario = new Usuario(null,null,null,correo.value,null,password.value)
 
-    this.UsuarioService.login(usuario).subscribe((data:Usuario[])=>{console.log(data)})
+    this.UsuarioService.login(usuario).subscribe((data:Usuario[])=>
+    {
+
+      this.UsuarioService.usuario1 = data[0];
+      this.UsuarioService.logueado = true;
+      console.log(this.UsuarioService.usuario1)
+    }) 
   }
 }

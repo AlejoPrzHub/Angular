@@ -10,9 +10,12 @@ export class UsuarioService {
 
   private url:string;
   public logueado:boolean;
-  public usuario:Usuario;
+  public usuario1:Usuario;
 
-  constructor(private http:HttpClient, private router:Router) { this.logueado = false}
+  constructor(private http:HttpClient, private router:Router) 
+    {
+     this.logueado = false
+    }
 
   register(usuario:Usuario)
   {
@@ -21,9 +24,7 @@ export class UsuarioService {
 
   login(usuario:Usuario)
   {
-    this.usuario = usuario;
-    this.logueado = true;
-    this.router.navigate(["/libros"])
+    this.router.navigate(["/libros"]);
     return this.http.post(this.url  = "http://localhost:3000/login",usuario)
   }
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
   selector: 'app-perfil',
@@ -10,9 +11,19 @@ export class PerfilComponent {
 
   public miUsuario :Usuario;
 
-  constructor()
+  constructor(public UsuarioService:UsuarioService)
   {
-    this.miUsuario = new Usuario(1,"Blanca","Mercado","Blanca@gmail.com","../../../assets/img/blanca.png","Blanca2000")
+    this.miUsuario = 
+    {
+      id_usuario:UsuarioService.usuario1.id_usuario,
+      nombre:UsuarioService.usuario1.nombre,
+      apellidos:UsuarioService.usuario1.apellidos,
+      correo:UsuarioService.usuario1.correo,
+      url:UsuarioService.usuario1.url,
+      password:null
+    }
+
+    // this.miUsuario = new Usuario(1,"Blanca","Mercado","Blanca@gmail.com","../../../assets/img/blanca.png","Blanca2000")
   }
 
 enviar1(nuevoNombre:HTMLInputElement,nuevoApellido:HTMLInputElement,nuevoCorreo:HTMLInputElement,nuevourl:HTMLInputElement)

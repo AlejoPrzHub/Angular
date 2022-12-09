@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Libro } from 'src/app/models/libro';
+import { Usuario } from 'src/app/models/usuario';
 import { LibrosService } from 'src/app/shared/libros.service';
+import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
   selector: 'app-libros',
@@ -12,7 +14,7 @@ export class LibrosComponent {
   
   public Libros: Libro[];
 
-  constructor(public librosService:LibrosService)
+  constructor(public librosService:LibrosService, public usuarioService:UsuarioService)
   {
     this.Libros = 
     [
@@ -21,23 +23,75 @@ export class LibrosComponent {
     ]
   }
 
-  getAll(condicion:number)
+  getAll(id_libro:number)
   {
-    if(condicion)
-    {this.Libros=[this.librosService.getOne(condicion)]}
+    
+    if(id_libro)
+    {this.librosService.getOne(this.usuarioService.usuario1.id_usuario, id_libro)
+    .subscribe((data:Libro[])=>
+    {
+      console.log(data)
+      if(data)
+      {
+      console.log("Libro obtenido correctamente")
+      this.Libros = data
+      }
+      else
+      console.log("ERROR al obtener Libro")
+    })}
     else
-    {this.Libros = this.librosService.getAll()}
+
+    {this.librosService.getAll(this.usuarioService.usuario1.id_usuario)
+    .subscribe((data:Libro[])=>
+    {
+      console.log(this.usuarioService.usuario1.id_usuario)
+      if(data.length > 0)
+      {
+      console.log("Libro obtenido correctamente")
+      this.Libros = data
+      }
+      else
+      console.log("ERROR al obtener Libro")
+    })}
+  }
+  
+
+  getOnee(id_libro:number)
+  {
+    this.librosService.getOne(this.usuarioService.usuario1.id_usuario, id_libro)
+    .subscribe((data:Libro[])=>
+      {
+        if(data.length > 0)
+        {
+        console.log("Libro obtenido correctamente")
+        this.Libros = data
+        }
+        else
+        console.log("ERROR al obtener Libro")
+      })
   }
 
-  getOne(condicion:number)
+  
+  delete(id_libro:string)
   {
-    this.librosService.getOne(condicion)
-    console.log(this.librosService)
-  }
+    this.librosService.delete({"id_libro":id_libro})
+    .subscribe((data)=>
+      {
+        console.log("Libro Eliminado correctamente")
+        console.log(data)
+      })
 
-  delete(condicion:number)
-  {
-    this.librosService.delete(condicion);
-    this.Libros = this.librosService.getAll()
+    this.librosService.getAll(this.usuarioService.usuario1.id_usuario)
+    .subscribe((data:Libro[])=>
+    {
+      console.log(this.usuarioService.usuario1.id_usuario)
+      if(data.length > 0)
+      {
+      console.log("Libro obtenido correctamente")
+      this.Libros = data
+      }
+      else
+      console.log("ERROR al obtener Libro")
+    })
   }
 }

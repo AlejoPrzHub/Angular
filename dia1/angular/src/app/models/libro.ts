@@ -1,11 +1,11 @@
 export class Libro {
-    id_libro:number;
-    id_usuario:number;
-    titulo:string;
-    tipoLibro:string;
-    autor:String;
-    precio:number;
-    photo:string;
+    public id_libro:number;
+    public id_usuario:number;
+    public titulo:string;
+    public tipoLibro:string;
+    public autor:String;
+    public precio:number;
+    public photo:string;
 
     constructor(titulo:string,tipoLibro:string,autor:string,precio:number,photo:string,id_usuario = 0,id_libro = 0,)
     {

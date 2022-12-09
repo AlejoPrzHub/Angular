@@ -8,10 +8,15 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
 })
 export class HeaderComponent {
 
-  servicio:UsuarioService
-
-  constructor()
+    
+  
+  constructor(public usuarioService:UsuarioService)
   {
-    //  this.servicio.logueado =true
+    if (usuarioService.logueado == false)
+    console.log ("Usuario conectado " + usuarioService.logueado)
+    else
+    console.log("conectado")
   }
+
+  
 }
